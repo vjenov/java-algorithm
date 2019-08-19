@@ -40,7 +40,7 @@ public class ScoreCalc {
 					System.out.print("현재까지의 누적값은 ");
 					for(int j = 0; j < i; j++) {
 						System.out.print(list[j]);
-						if(j < i -1) {
+						if(j < i - 1) {
 							System.out.print(" + ");
 						}else {
 							System.out.print(" = " + sum + "이고, 평균은 " + average + "입니다. (소수점이하는 절삭");

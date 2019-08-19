@@ -26,7 +26,7 @@ public class BMI {
 		String name = scan.next();
 		if(name.equals("0")) {
 			System.out.print("시스템 종료");
-			break;
+			return;
 		}
 		System.out.println("키를 입력하세요(단위 cm)");
 		int height = scan.nextInt();
@@ -47,7 +47,7 @@ public class BMI {
 			}else {
 				fat = "저체중";
 			}
-		System.out.println(fat);
+		System.out.printf("%s님은 %s입니다.", name, fat);
 		}
 	}
 }
