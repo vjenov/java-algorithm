@@ -7,9 +7,7 @@ import java.util.Scanner;
 숫자값(점수)을 전부 더한 결과값이 나오는 프로그램이 필요합니다.
 그런데 교수님께서 자꾸 결과값만 보니까 잘 연산이 되었는지 의심이 된다하시네요.
 그래서 결과만 보이지 말고 입력한 값이 전부 보이게 해달랍니다. 
-
 화면은 아래와 같습니다.
-
 더하시려는 숫자를 입력하세요(종료는 -1)
 > 50
 더하시려는 숫자를 입력하세요(종료는 -1)
@@ -28,23 +26,29 @@ public class ScoreCalc {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		while(true) {
-			double[] list = {100};
-			String[] listString = new String[100];
+			int[] list = new int[100];
 			int sum = 0;
+			int average = 0;
 			for(int i = 0; i < list.length; i++) {
 				System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
-				list[i] = scan.nextDouble();
+				list[i] = scan.nextInt();
+				System.out.println("> "+ list[i]);
+				sum += list[i];
 				if(list[i] == -1) {
-					System.out.println("시스템 종료");
-					return;
-				}
-				System.out.println("> "+(int)list[i]);
-				listString[i] += (i == list.length-1) ? String.valueOf((int)list[i]) + " = " : String.valueOf((int)list[i]) + " + ";
-				sum += (int)list[i];
-				int average = sum / list.length;
-				System.out.print("현재까지의 누적값은 " + listString + sum + "이고, 평균은 " + average + "입니다.");
+					sum = sum + 1;
+					average = sum / i;
+					System.out.print("현재까지의 누적값은 ");
+					for(int j = 0; j < i; j++) {
+						System.out.print(list[j]);
+						if(j < i -1) {
+							System.out.print(" + ");
+						}else {
+							System.out.print(" = " + sum + "이고, 평균은 " + average + "입니다. (소수점이하는 절삭");
+						}
+					}
+						break;
+					}
 			}
-			
 		}
 	}
 
