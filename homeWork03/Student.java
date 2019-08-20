@@ -108,7 +108,7 @@ public class Student {
 			default : eval = "Wrong Type";
 			break;
 			}
-			return String.format(eval);
+			return eval;
 		}
 	public String passOrFail(String name, int kor, int eng, int mat) {
 		int total = kor + eng + mat;
