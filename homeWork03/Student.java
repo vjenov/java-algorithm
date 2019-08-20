@@ -209,9 +209,11 @@ public class Student {
 		}
 	return "";
 	}
-	public String getScoreCalc(int[] list, int sum) {
+	public String getScoreCalc(int[] list) {
 		int average = 0;
+		int sum = 0;
 		for(int i = 0; i < list.length; i++) {
+			sum += list[i];
 			if(list[i] == -1) {
 				sum = sum + 1;
 				average = sum / i;

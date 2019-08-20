@@ -138,12 +138,11 @@ public class Engine {
 				System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
 				list[i] = scan.nextInt();
 				System.out.println("> "+ list[i]);
-				sum += list[i];
 				if(list[i] == -1) {
 					break;
 				}
 			}
-			result = stu.getScoreCalc(list, sum);
+			result = stu.getScoreCalc(list);
 			System.out.println(result);
 			break;
 		case 11 :
