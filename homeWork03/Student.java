@@ -233,8 +233,8 @@ public class Student {
 	}
 	public String getTax(String name, int pay) {
 		double taxRate = 9.7;
-		double tax = pay / taxRate;
-		return String.format("연봉 %d만원을 받으시는 %s님께서 납부할 세금은 %s만원입니다.", pay, name, tax);
+		double tax = pay * taxRate /100;
+		return String.format("연봉 %d만원을 받으시는 %s님께서 납부할 세금은 %.1f만원입니다.", pay, name, tax);
 		}
 	public String getTimeCalc(int sec) {
 		int hour = sec/60/60;
