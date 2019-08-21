@@ -4,7 +4,6 @@ public class Service {
 	
 	public String getBmi(Member member) {
 		String result = "";
-		String name = member.getName();
 		double height = member.getHeight();
 		double weight = member.getWeight();
 		double bmi = weight/(height*height/100/100);
@@ -19,7 +18,7 @@ public class Service {
 			}else {
 				result = "저체중";
 			}
-			return String.format("%s님의 bmi는 %.1f이고 %s입니다.", name, bmi, result);
+			return String.format("%s님의 bmi는 %.1f이고 %s입니다.", member.getName(), bmi, result);
 	}
 	public String getReportCard(Member member) {
 		int kor = member.getKor();
@@ -55,6 +54,7 @@ public class Service {
 	}
 	
 	public String getTax(Member member) {
+		String result = "";
 		int pay = member.getPay();
 		double taxRate = 9.7;
 		double tax = pay * taxRate /100;

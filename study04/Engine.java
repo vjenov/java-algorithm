@@ -65,6 +65,7 @@ public class Engine {
 			case 6 :
 				System.out.print("세금 계산 프로그램입니다.");
 				System.out.println(service.getTax(member));
+				break;
 			}		
 		}
 	}
